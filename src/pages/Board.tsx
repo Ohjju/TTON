@@ -1,3 +1,5 @@
+import "../styles/global.scss";
+
 // 게시판
 export default function Board() {
   return (

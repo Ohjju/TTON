@@ -1,3 +1,5 @@
+import "../styles/global.scss";
+
 // 할 일
 export default function Todo() {
   return (

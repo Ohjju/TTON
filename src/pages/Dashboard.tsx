@@ -1,3 +1,5 @@
+import "../styles/global.scss";
+
 // 메인 대시보드
 export default function Dashboard() {
   return (
