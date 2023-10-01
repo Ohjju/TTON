@@ -1,0 +1,55 @@
+.todoBox {
+  width: 100%;
+  height: 17rem;
+  margin-bottom: 1.6rem;
+  box-sizing: border-box;
+  border-radius: 15px;
+
+  .todoColor {
+    position: absolute;
+    width: 1.2rem;
+    height: 17rem;
+    border-radius: 15px 0 0 15px;
+  }
+
+  .todoContent {
+    width: 100%;
+    height: 100%;
+    padding-left: 2.5rem;
+    padding-top: 1.3rem;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+.todoState {
+  width: 2.7rem;
+  height: 2.7rem;
+  border-radius: 50%;
+  margin-bottom: 1rem;
+}
+
+.todoTitle {
+  font-size: 1.8rem;
+  font-weight: 700;
+  line-height: 2.7rem;
+  margin-bottom: 0.4rem;
+  box-sizing: border-box;
+}
+
+.todoDate {
+  font-size: 1.2rem;
+  font-weight: 600;
+  line-height: 1.8rem;
+  margin-bottom: 0.4rem;
+  box-sizing: border-box;
+}
+
+.todoContent {
+  font-size: 1.2rem;
+  line-height: 1.8rem;
+  font-weight: 500;
+  box-sizing: border-box;
+}
