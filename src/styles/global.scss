@@ -15,6 +15,7 @@ html {
 }
 
 body {
+  background-color: #f8f8f8;
   overflow-x: hidden;
 }
 
@@ -76,9 +77,73 @@ p {
 
 .container {
   width: 100%;
+  padding: 3.6rem 4rem;
 }
 
 .wrapper {
   max-width: 1200px;
   margin: 0 auto;
+}
+
+.side-flex {
+  display: flex;
+}
+
+.header {
+  height: 70px;
+  background-color: #cbe3ff;
+  display: flex;
+  justify-content: flex-end;
+
+  ul {
+    height: 100%;
+    display: flex;
+    align-items: center;
+
+    li {
+      margin: 0 1rem;
+
+      .profile-status {
+        width: 3.4rem;
+        height: 3.4rem;
+        background-color: gray;
+        border-radius: 50%;
+      }
+
+      i {
+        font-size: 3rem;
+      }
+    }
+  }
+}
+
+.side-bar {
+  width: 24rem;
+  height: 100%;
+
+  .mini-cal {
+    width: 100%;
+    margin-bottom: 2rem;
+
+    .mini-cal-head {
+      height: 3rem;
+      text-align: center;
+      background-color: #cbe3ff;
+      border-radius: 15px 15px 0 0;
+    }
+
+    .mini-cal-main {
+      height: 180px;
+      background-color: white;
+      border-radius: 0 0 15px 15px;
+    }
+  }
+
+  .mini-list {
+    width: 100%;
+    height: 300px;
+    background-color: #ffffff;
+    border-radius: 15px;
+    margin-bottom: 2rem;
+  }
 }

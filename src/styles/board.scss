@@ -1,0 +1,240 @@
+// 공통
+button {
+  display: inline-block;
+  font-family: inherit;
+  vertical-align: middle;
+  cursor: pointer;
+  white-space: nowrap;
+  text-decoration: none;
+  background: transparent;
+  border: none;
+  outline: 0;
+}
+
+// 1. 게시판 페이지 전체
+.board-main {
+  padding: 0 2rem;
+  width: 100%;
+  height: 100%;
+
+  // 1) 게시판 그룹명 부분 ("새싹상사")
+  .board-head {
+    height: 3rem;
+    border-radius: 15px 15px 0 0;
+    background-color: var(--main-color-20);
+
+    h4 {
+      text-align: center;
+      word-spacing: -3px;
+      color: #5d5d5d;
+    }
+  }
+
+  // 2) 게시글 영역
+  .board-area {
+    width: 100%;
+    height: 500px;
+    border-radius: 0 0 15px 15px;
+    background-color: #ffffff;
+    padding: 1.2rem;
+    display: flex;
+
+    // 2-1) 게시판 본문 영역
+    .board-content {
+      display: flex;
+      position: relative;
+
+      .detail-area {
+        width: 100%;
+        height: 300px;
+        overflow-y: scroll;
+      }
+
+      .message-area {
+        width: 100%;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        padding: 1rem 2rem;
+
+        .input-content {
+          width: 100%;
+          border: 2px #81caff solid;
+          background-color: #f8f8f8;
+          border-radius: 15px;
+          padding: 1rem 2rem;
+
+          textarea {
+            width: 100%;
+            border: 0;
+            background-color: #f8f8f8;
+            // 높이 조절만 가능
+            resize: vertical;
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+
+            &::placeholder {
+              font-family: "Pretendard Variable", sans-serif;
+              color: var(--text-black-50);
+            }
+          }
+
+          .submit-area {
+            display: flex;
+            justify-content: flex-end;
+
+            button {
+              width: 5.8rem;
+              height: 2.5rem;
+              background-color: var(--main-color-30);
+              border-radius: 15px;
+              margin: 0 0.5rem;
+            }
+
+            p {
+              color: #ffffff;
+            }
+          }
+        }
+      }
+    }
+
+    // 2-2) 게시판 사이드(댓글) 영역
+    .side-content {
+      width: 100%;
+      position: relative;
+
+      .side-detail {
+        width: 100%;
+        height: 300px;
+        overflow-y: scroll;
+      }
+
+      .ripple-area {
+        width: 100%;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        padding: 1rem 2rem;
+
+        .input-ripple {
+          width: 100%;
+          border: 2px #81caff solid;
+          background-color: #f8f8f8;
+          border-radius: 15px;
+          padding: 1rem 2rem;
+
+          textarea {
+            width: 100%;
+            border: 0;
+            background-color: #f8f8f8;
+            // 높이 조절만 가능
+            resize: vertical;
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+
+            &::placeholder {
+              font-family: "Pretendard Variable", sans-serif;
+              color: var(--text-black-50);
+            }
+          }
+
+          .submit-area {
+            display: flex;
+            justify-content: flex-end;
+
+            button {
+              width: 5.8rem;
+              height: 2.5rem;
+              background-color: var(--main-color-30);
+              border-radius: 15px;
+              margin: 0 0.5rem;
+            }
+
+            p {
+              color: #ffffff;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// 게시글 본문 디테일 =============================================
+.article-detail {
+  width: 100%;
+  margin-bottom: 1rem;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+
+  .content-area {
+    max-width: 80%;
+    display: flex;
+
+    .user-profile {
+      width: 5rem;
+      min-width: 5rem;
+      height: 5rem;
+      margin-right: 1rem;
+
+      img {
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        border: 0.5px solid #f1f1f1;
+      }
+    }
+
+    .user-content {
+      .content-detail {
+        h6 {
+          word-spacing: -3px;
+          color: #353535;
+        }
+
+        p {
+          cursor: pointer;
+          word-spacing: -3px;
+          color: #5d5d5d;
+          margin-bottom: 1rem;
+        }
+      }
+
+      .content-check {
+        display: flex;
+
+        .check-status {
+          display: flex;
+          flex-wrap: wrap;
+          margin-right: 1rem;
+        }
+
+        .ripple-status {
+          display: flex;
+          flex-wrap: wrap;
+        }
+
+        i {
+          font-size: 1.8rem;
+          cursor: pointer;
+          margin-right: 0.4rem;
+        }
+
+        p {
+          font-size: 1.2rem;
+          color: #5d5d5d;
+          font-weight: 800;
+        }
+      }
+    }
+  }
+
+  .more {
+    img {
+      height: 2rem;
+      cursor: pointer;
+    }
+  }
+}
