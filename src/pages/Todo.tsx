@@ -2,77 +2,179 @@ import "../styles/global.scss";
 import "../styles/todo.scss";
 import TodoBox from "../components/TodoBox";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faPlus, faFile } from "@fortawesome/free-solid-svg-icons";
-import React, { useState, useRef } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { faPlus, faBars, faBell } from "@fortawesome/free-solid-svg-icons";
+import { useState, useRef } from "react";
+import TodoSide from "../components/TodoSide";
 
 // todo 목록
 export default function Todo() {
-  const nextID = useRef<number>(1);
-  const [inputTodo, setInputTodo] = useState([
+  const TodoID = useRef<number>(2);
+  const DoingID = useRef<number>(2);
+  const DoneID = useRef<number>(0);
+  // todo 목록
+  const [inputTodo, setInputTodo] = useState<any>([
     {
       id: 0,
-      To: <></>,
-      // 나중에 고치기(불필요한 태그 생성됨)
+      To: (
+        <TodoBox
+          statecolor="--status-green"
+          background="#ffffff"
+          todoTitle="ppt 만들기"
+          todoStartDate="2023/10/11"
+          todoEndDate="2023/10/12"
+          todoContent="피그마로 만들고 pdf 추출하기"
+          todoColor="--select-green"
+          todoId="0"
+        />
+      ),
+    },
+    {
+      id: 1,
+      To: (
+        <TodoBox
+          statecolor="--status-green"
+          background="#ffffff"
+          todoTitle="강의 듣기"
+          todoStartDate="2023/10/15"
+          todoEndDate="2023/10/30"
+          todoContent="강의 계획 먼저 세우고 듣기"
+          todoColor="--select-pink"
+          todoId="1"
+        />
+      ),
     },
   ]);
 
-  // react에서 useref 사용?
-  const input = useRef<HTMLInputElement>(null);
+  // doing 목록
+  const [inputDoing, setInputDoing] = useState<any>([
+    {
+      id: 0,
+      To: (
+        <TodoBox
+          statecolor="--status-yellow"
+          background="#ffffff"
+          todoTitle="디자인 틀 잡기"
+          todoStartDate="2023/9/22"
+          todoEndDate="2023/10/11"
+          todoColor="--select-brown"
+          doingId="0"
+        />
+      ),
+    },
+    {
+      id: 1,
+      To: (
+        <TodoBox
+          statecolor="--status-yellow"
+          background="#ffffff"
+          todoTitle="코드 작성"
+          todoStartDate="2023/9/27"
+          todoEndDate="2023/10/12"
+          todoContent="타입스크립트 사용하기"
+          todoColor="--select-brown"
+          doingId="1"
+        />
+      ),
+    },
+  ]);
+
+  // done 목록
+  const [inputDone, setInputDone] = useState<any>([
+    {
+      id: 0,
+      To: (
+        <TodoBox
+          statecolor="--status-gray"
+          background="#f5f5f5"
+          todoTitle="프로젝트 기획"
+          todoStartDate="2023/9/22"
+          todoEndDate="2023/9/26"
+          todoContent="서비스 목표, 이름 정하기"
+          todoColor="--select-gray"
+          doneId="0"
+        />
+      ),
+    },
+  ]);
 
   // todo 추가
   function addTodo() {
     const newTodo = {
-      id: nextID.current, // id 값은 변수로 넣어줌
+      id: TodoID.current, // id 값은 변수로 넣어줌
       To: (
-        // icon이랑 input창이랑 가로 정렬 위해 묶어줌
-        <div className="inputStyle">
-          <FontAwesomeIcon icon={faFile} className="inputIcon" />
-          <input
-            type="text"
-            ref={input}
-            className="todoInput"
-            placeholder="할일을 입력하세요"
-            spellCheck={false}
-            onKeyDown={(e) => {
-              if (e.key === "Enter") {
-                // 테스크 블럭 추가 완료
-                //입력받은 값 저장
-                const inputValue = input.current?.value;
-                document.querySelector(".inputIcon")?.remove();
-                // 엔터하면 input 포커스 해제
-                (document.activeElement as HTMLElement).blur();
-              }
-            }}
-          ></input>
-        </div>
+        <TodoBox
+          statecolor="--status-green"
+          background="#ffffff"
+          todoId={TodoID.current}
+        />
       ),
     };
-    setInputTodo([...inputTodo, newTodo]); // 기존 값에 새로운 인풋객체를 추가
-    nextID.current += 1; // id값은 1씩 늘려줌
+    setInputTodo([...inputTodo, newTodo]); // 새로운 인풋객체 추가
+    TodoID.current += 1; // id값은 1씩 늘려줌
   }
 
-  // todoBox 색
-  const color = [
-    "--select-gray",
-    " --select-pink",
-    "--select-green",
-    "--select-brown",
-  ];
+  // todo마다 id 부여
+  // id=1부터 시작, 0은 제일 마지막
+  // var todoCount = 1;
+  // function addTodoId() {
+  //   // querySelector 때문에 첫번째에만 적용됨
+  //   const itemNew = document.querySelector(".test");
+  //   var next = itemNew;
+  //   while (next) {
+  //     next?.setAttribute("id", "item_" + todoCount);
+  //     todoCount = todoCount + 1;
+  //     next = next?.nextElementSibling;
+  //   }
+  // }
 
-  // todolist 실습
-  // const addTodo = () => {
-  //   dispatch(create({ id: nextId, text: input.current.value }));
-  //   input.current.value = "";
-  // };
+  // doing 추가
+  function addDoing() {
+    const newDoing = {
+      id: DoingID.current,
+      To: (
+        <TodoBox
+          statecolor="--status-yellow"
+          background="#ffffff"
+          doingId={DoingID.current}
+        />
+      ),
+    };
+    setInputDoing([...inputDoing, newDoing]);
+    DoingID.current += 1;
+  }
+
+  // Done 추가
+  function addDone() {
+    const newDone = {
+      id: DoneID.current,
+      To: (
+        <TodoBox
+          statecolor="--status-gray"
+          background="#f5f5f5"
+          doneId={DoneID.current}
+        />
+      ),
+    };
+    setInputDone([...inputDone, newDone]);
+    DoneID.current += 1;
+  }
 
   return (
     <>
-      <header className="header"></header>
-      <div className="todoContainer">
+      <header className="header">
+        <FontAwesomeIcon className="hamburger" icon={faBars} />
+        <div className="logo"></div>
+        <div className="rightIcon">
+          <FontAwesomeIcon className="alarm" icon={faBell} />
+          <div className="me"></div>
+        </div>
+      </header>
+      <div className="todoContainer ">
         <div className="left">
           <div className="miniCalendar shadow"></div>
-          <div className="whiteBox shadow"></div>
+          <div className="whiteBox shadow">
+            <TodoSide />
+          </div>
         </div>
         <div className="right">
           <div className="todoGroup">
@@ -81,14 +183,15 @@ export default function Todo() {
                 <div style={{ display: "flex" }}>
                   <div className="state"></div>
                   <div className="title">해야할 일</div>
-                  <div className="count">5</div>
+                  <div className="count">{inputTodo.length}</div>
                 </div>
                 <FontAwesomeIcon
                   className="addTodo"
                   icon={faPlus}
                   style={{ color: "d9d9d9", fontSize: "2.5rem" }}
-                  // 클릭하면 input창 생김
-                  onClick={addTodo}
+                  onClick={() => {
+                    addTodo();
+                  }}
                 />
               </div>
 
@@ -96,12 +199,15 @@ export default function Todo() {
                 <div style={{ display: "flex" }}>
                   <div className="state"></div>
                   <div className="title">진행 중</div>
-                  <div className="count">5</div>
+                  <div className="count">{inputDoing.length}</div>
                 </div>
                 <FontAwesomeIcon
                   className="addTodo"
                   icon={faPlus}
                   style={{ color: "d9d9d9", fontSize: "2.5rem" }}
+                  onClick={() => {
+                    addDoing();
+                  }}
                 />
               </div>
               <div className="done shadow">
@@ -113,73 +219,63 @@ export default function Todo() {
                   className="addTodo"
                   icon={faPlus}
                   style={{ color: "d9d9d9", fontSize: "2.5rem" }}
+                  onClick={() => {
+                    addDone();
+                  }}
                 />
               </div>
             </div>
             <div className="todoGroupBox">
               <div className="todo">
-                {inputTodo.map((e, index) => {
-                  return (
-                    <div key={index}>
-                      <div>{e.To}</div>
-                    </div>
-                  );
-                })}
-
-                <TodoBox
-                  title="디자인 틀 완성하기"
-                  date="09.28 ~ 10.20"
-                  content="내용내요내용내용내요내요"
-                  boxcolor="--select-pink"
-                  statecolor="--status-green"
-                />
-                <TodoBox
-                  title="코드 작성하기"
-                  date="09.28 ~ 10.20"
-                  content="content"
-                  boxcolor="--select-gray"
-                  statecolor="--status-green"
-                />
-                <TodoBox
-                  title="코드 작성하기"
-                  date="09.28 ~ 11.30"
-                  content="content"
-                  boxcolor="--select-green"
-                  statecolor="--status-green"
-                />
-
-                <TodoBox
-                  title="코드 작성하기"
-                  date="09.28 ~ 11.30"
-                  content="content"
-                  boxcolor="--select-brown"
-                  statecolor="--status-green"
-                />
+                {inputTodo &&
+                  inputTodo.map((item: any, index: any) => {
+                    return (
+                      <>
+                        <div
+                          id={String("item_" + item.id)}
+                          className="test"
+                          key={index}
+                        >
+                          {item.To}
+                          {/* 얘가 업데이트 안됨 - 처음 상태 유지 */}
+                        </div>
+                      </>
+                    );
+                  })}
               </div>
+
               <div className="doing">
-                <TodoBox
-                  title="코드 작성하기"
-                  date="09.28 ~ 11.30"
-                  content="content"
-                  boxcolor="--select-green"
-                  statecolor="--status-yellow"
-                />
-                <TodoBox
-                  title="코드 작성하기"
-                  date="09.28 ~ 11.30"
-                  content="content"
-                  boxcolor="--select-brown"
-                  statecolor="--status-yellow"
-                />
+                {inputDoing &&
+                  inputDoing.map((item: any, index: any) => {
+                    return (
+                      <>
+                        <div
+                          id={String("doing_" + item.id)}
+                          className="test1"
+                          key={index}
+                        >
+                          {item.To}
+                        </div>
+                      </>
+                    );
+                  })}
               </div>
+
               <div className="done">
-                <TodoBox
-                  title="코드 작성하기"
-                  date="09.28 ~ 11.30"
-                  content="content"
-                  boxcolor="--select-gray"
-                  statecolor="--status-gray"
-                />
+                {inputDone &&
+                  inputDone.map((item: any, index: any) => {
+                    return (
+                      <>
+                        <div
+                          id={String("done_" + item.id)}
+                          className="test2"
+                          key={index}
+                        >
+                          {item.To}
+                        </div>
+                      </>
+                    );
+                  })}
               </div>
             </div>
           </div>

@@ -1,0 +1,170 @@
+.dropContainer {
+  width: 16rem;
+  height: 18.1rem;
+  background-color: #fefefe;
+  border: 2px solid var(--main-color-20);
+  border-radius: 10px;
+  position: absolute;
+  transform: translate(13rem, 4.4rem);
+  z-index: 1;
+  padding: 0.8rem 0;
+}
+
+.shadow {
+  box-shadow: 0px 0px 2px 2px #e7e7e745;
+}
+
+// 일정 삭제
+.delete {
+  width: 100%;
+  height: 2rem;
+  font-size: 1.4rem;
+  line-height: 2rem;
+  padding: 0 1.2rem;
+}
+
+.delete:hover {
+  cursor: "pointer";
+  background-color: var(--text-black-10);
+}
+
+// 상태 변경
+.changeState {
+  width: 100%;
+  height: 2rem;
+  font-size: 1.4rem;
+  line-height: 2.1rem;
+  padding: 0 1.2rem;
+}
+
+.changeState:hover {
+  cursor: "pointer";
+  background-color: var(--main-color-30);
+  color: white;
+}
+
+.selectState {
+  display: flex;
+  justify-content: center;
+  padding: 0.4rem 0.5rem;
+
+  .selectTodo,
+  .selectDoing,
+  .selectDone {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 5rem;
+    height: 3.5rem;
+  }
+
+  .selectTodo:hover,
+  .selectDoing:hover,
+  .selectDone:hover {
+    border: 1.5px solid var(--main-color-10);
+    // background-color: var(--main-color-10);
+  }
+
+  .stateTodo {
+    width: 4rem;
+    height: 2.5rem;
+    background-color: var(--status-green);
+    border-radius: 2px;
+    font-size: 1.2rem;
+    font-weight: 500;
+    line-height: 2.5rem;
+    text-align: center;
+  }
+
+  .stateDoing {
+    width: 4rem;
+    height: 2.5rem;
+    background-color: var(--status-yellow);
+    border-radius: 2px;
+    font-size: 1.2rem;
+    font-weight: 500;
+    line-height: 2.5rem;
+    text-align: center;
+  }
+  .stateDone {
+    width: 4rem;
+    height: 2.5rem;
+    background-color: var(--status-gray);
+    border-radius: 2px;
+    font-size: 1.2rem;
+    font-weight: 500;
+    line-height: 2.5rem;
+    text-align: center;
+  }
+
+  .stateTodo,
+  .stateDoing,
+  .stateDone:hover {
+    cursor: default;
+  }
+}
+
+//색 변경
+.changeColor {
+  width: 100%;
+  height: 2rem;
+  font-size: 1.4rem;
+  line-height: 2.1rem;
+  padding: 0 1.2rem;
+}
+
+.changeColor:hover {
+  cursor: "pointer";
+  background-color: var(--main-color-30);
+  color: white;
+}
+
+.selectColor {
+  display: flex;
+  justify-content: center;
+  padding: 0.3rem 0.5rem;
+
+  .selectPink,
+  .selectGreen,
+  .selectGray,
+  .selectBrown {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 3.5rem;
+    height: 3.5rem;
+  }
+
+  .selectPink:hover,
+  .selectGreen:hover,
+  .selectGray:hover,
+  .selectBrown:hover {
+    border: 1.5px solid var(--main-color-10);
+    // background-color: var(--main-color-10);
+  }
+
+  .pink {
+    width: 2.5rem;
+    height: 2.5rem;
+    background-color: var(--select-pink);
+    border-radius: 2px;
+  }
+  .green {
+    width: 2.5rem;
+    height: 2.5rem;
+    background-color: var(--select-green);
+    border-radius: 2px;
+  }
+  .gray {
+    width: 2.5rem;
+    height: 2.5rem;
+    background-color: var(--select-gray);
+    border-radius: 2px;
+  }
+  .brown {
+    width: 2.5rem;
+    height: 2.5rem;
+    background-color: var(--select-brown);
+    border-radius: 2px;
+  }
+}

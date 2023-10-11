@@ -1,0 +1,25 @@
+.sideImportContainer {
+  padding: 0 1.2rem;
+  // padding-bottom: 0.4rem;
+}
+.sideImportant {
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+  padding-bottom: 0.4rem;
+
+  .importantCheckbox {
+    font-size: 1.4rem;
+    line-height: 2.1rem;
+    margin-right: 1.2rem;
+  }
+  .importantName {
+    font-size: 1.4rem;
+    line-height: 2.1rem;
+  }
+  .importantStar {
+    font-size: 1.2rem;
+    line-height: 2.1rem;
+    color: var(--text-black-20);
+  }
+}
