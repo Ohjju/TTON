@@ -1,5 +1,5 @@
 import "../styles/board.scss";
-import { useState, SetStateAction } from "react";
+import React, { useState, SetStateAction } from "react";
 import BoardDetail from "../components/BoardDetail";
 import InputContent from "../components/InputContent";
 import BoardSideDetail from "../components/BoardSideDetail";
