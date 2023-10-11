@@ -1,9 +1,26 @@
 import { PropsType } from "../components/BoardContent";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  writeContent,
+  updateContent,
+  deleteContent,
+} from "../store/modules/boardReducer";
 
 const moreIcon = require("../assets/img/more.png");
 const userImg = require("../assets/img/user/profile.png");
 
+// export interface PropsType2 {
+//   state: object;
+// }
+
 export default function BoardDetail({ isShow, setIsShow }: PropsType) {
+  const list = useSelector((state: any) => state.boardReducer.list);
+  // filter는 콜백함수 들어가는 일종의 반복문
+  const todoList = list.filter((el: any) => el.isDeleted === false);
+
+  const dispatch = useDispatch();
+  const nextId = useSelector((state: any) => state.boardReducer.nextID);
+
   return (
     <>
       <article className="article-detail">
