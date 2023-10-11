@@ -1,0 +1,33 @@
+.sideTodoContainer {
+  padding: 0 1.2rem;
+  padding-bottom: 0.4rem;
+}
+
+.sideTodo {
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+  padding-bottom: 0.4rem;
+
+  .todoCheckbox {
+    font-size: 1.4rem;
+    line-height: 2.1rem;
+    color: var(--status-green);
+    margin-right: 1.2rem;
+  }
+  .todoName1,
+  .todoName2 {
+    font-size: 1.4rem;
+    line-height: 2.1rem;
+  }
+  #todoStar0,
+  #todoStar1 {
+    font-size: 1.2rem;
+    line-height: 2.1rem;
+    color: var(--text-black-20);
+  }
+
+  .important {
+    color: #ffc773 !important;
+  }
+}
