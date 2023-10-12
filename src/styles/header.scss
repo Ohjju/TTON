@@ -1,0 +1,43 @@
+.header {
+  background-color: #bedcff;
+  height: 4rem;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.6rem 1.6rem;
+  box-sizing: border-box;
+
+  .hamburger {
+    font-size: 2.8rem;
+    color: white;
+  }
+
+  .logo {
+    background-image: url("../assets/img/logo.png");
+    background-size: 9.2rem 2rem;
+    width: 9.2rem;
+    height: 2rem;
+  }
+
+  .rightIcon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .alarm {
+      font-size: 2.8rem;
+      color: white;
+      margin-right: 1.4rem;
+    }
+
+    .me {
+      width: 2.8rem;
+      height: 2.8rem;
+      background-image: url("../assets/img/user/profile.png");
+      background-size: 2.8rem;
+      border-radius: 50%;
+      background-color: #ffffff;
+    }
+  }
+}

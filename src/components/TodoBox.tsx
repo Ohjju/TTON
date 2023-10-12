@@ -110,7 +110,6 @@ export default function TodoBox(props: any) {
                 if (e.key === "Enter") {
                   //입력받은 title => inputTitle
                   const inputTitle = title.current?.value;
-                  document.querySelector(".inputIcon")?.remove();
                   // 엔터하면 input 포커스 해제
                   (document.activeElement as HTMLElement).blur();
                 }
@@ -143,7 +142,6 @@ export default function TodoBox(props: any) {
                   const inputMemo = (
                     document.querySelector(".todoMemo") as HTMLInputElement
                   ).value;
-                  console.log(inputMemo);
                 }
               }}
             ></textarea>

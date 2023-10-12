@@ -1,0 +1,520 @@
+.shadow {
+  box-shadow: 0px 0px 2px 2px #e7e7e720;
+}
+
+.blueShadow {
+  box-shadow: 0px 0px 2px 2px #81cbff20;
+}
+
+.dashboardContainer {
+  background-color: white;
+  width: 100%;
+  height: calc(100vh - 4rem);
+  display: flex;
+
+  .sideMenu {
+    min-width: 6.4rem;
+    height: 100%;
+    background-color: var(--main-color-20);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1.5rem;
+
+    .gotoHome {
+      width: 100%;
+      height: 2.4rem;
+      margin-bottom: 2rem;
+      text-align: center;
+      .gotoHomeIcon {
+        width: 100%;
+        height: 100%;
+        font-size: 2.4rem !important;
+        color: var(--main-color-30);
+      }
+    }
+
+    .gotoBoard {
+      width: 100%;
+      height: 2.4rem;
+      margin-bottom: 2rem;
+      text-align: center;
+
+      .gotoBoardIcon {
+        width: 2.4rem;
+        height: 2.4rem;
+        font-size: 2.4rem;
+        color: white;
+      }
+    }
+
+    .gotoCalendar {
+      width: 100%;
+      height: 2.4rem;
+      margin-bottom: 2rem;
+      text-align: center;
+
+      .gotoCalendarIcon {
+        width: 2.4rem;
+        height: 2.4rem;
+        font-size: 2.4rem;
+        color: white;
+      }
+    }
+
+    .gotoTodo {
+      width: 100%;
+      height: 2.4rem;
+      margin-bottom: 2rem;
+      text-align: center;
+
+      .gotoTodoIcon {
+        width: 2.4rem;
+        height: 2.4rem;
+        font-size: 2.4rem;
+        color: white;
+      }
+    }
+
+    .gotoEmailIcon {
+      width: 2.4rem;
+      height: 2.4rem;
+      font-size: 2.4rem;
+      color: white;
+      margin-bottom: 2rem;
+    }
+  }
+
+  .myPage {
+    min-width: 27rem;
+    width: 100%;
+    max-width: 30rem;
+    height: 100%;
+    background-color: var(--main-color-10);
+    padding: 4rem 3.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .myPicture {
+      width: 20rem;
+      height: 20rem;
+      background-image: url("../assets/img/user/profile.png");
+      background-size: 20rem;
+      border-radius: 50%;
+      background-color: #ffffff;
+      margin-bottom: 2rem;
+    }
+
+    .officeState {
+      width: 20rem;
+      height: 3rem;
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 1.2rem;
+
+      .on {
+        width: 9.8rem;
+        height: 100%;
+        border-radius: 15px;
+        background-color: var(--main-color-30);
+        color: white;
+        font-size: 1.6rem;
+        line-height: 3rem;
+        font-weight: 600;
+        text-align: center;
+        font-family: "Pretendard Variable", sans-serif;
+      }
+      .off {
+        width: 9.8rem;
+        height: 100%;
+        border-radius: 15px;
+        background-color: var(--text-black-30);
+        color: white;
+        font-size: 1.6rem;
+        font-size: 1.6rem;
+        line-height: 3rem;
+        font-weight: 600;
+        text-align: center;
+        font-family: "Pretendard Variable", sans-serif;
+      }
+    }
+
+    .myInfo {
+      width: 20.5rem;
+      height: 9rem;
+      border-radius: 15px;
+      background-color: white;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1rem;
+      padding: 1rem 0;
+
+      .myName {
+        font-size: 2rem;
+        line-height: 2.4rem;
+        font-weight: 600;
+        font-family: "Pretendard Variable", sans-serif;
+        margin-bottom: 0.4rem;
+      }
+
+      .myPhone {
+        font-size: 1.2rem;
+        line-height: 1.8rem;
+        font-weight: 500;
+        font-family: "Pretendard Variable", sans-serif;
+        color: var(--text-black-40);
+
+        .phoneIcon {
+          margin-right: 0.8rem;
+        }
+      }
+
+      .myEmail {
+        font-size: 1.2rem;
+        line-height: 1.8rem;
+        font-weight: 500;
+        font-family: "Pretendard Variable", sans-serif;
+        color: var(--text-black-40);
+
+        .emailIcon {
+          margin-right: 0.8rem;
+        }
+      }
+    }
+
+    .myWorkTime {
+      width: 20.5rem;
+      height: 9rem;
+      border-radius: 15px;
+      background-color: white;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1rem;
+      padding: 1rem 0;
+
+      .onTimeContainer {
+        font-size: 1.2rem;
+        line-height: 1.8rem;
+        font-weight: 600;
+        font-family: "Pretendard Variable", sans-serif;
+        color: var(--main-color-30);
+        margin-bottom: 0.4rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .onTime {
+          width: 9rem;
+          margin-left: 0.5rem;
+          font-size: 1.2rem;
+          line-height: 1.8rem;
+          color: var(--text-black-50);
+          font-weight: 400;
+        }
+      }
+
+      .offTimeContainer {
+        font-size: 1.2rem;
+        line-height: 1.8rem;
+        font-weight: 600;
+        font-family: "Pretendard Variable", sans-serif;
+        color: var(--main-color-30);
+        margin-bottom: 0.4rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .offTime {
+          width: 9rem;
+          font-size: 1.2rem;
+          line-height: 1.8rem;
+          margin-left: 0.5rem;
+          color: var(--text-black-50);
+          font-weight: 400;
+        }
+      }
+
+      .workingTimeContainer {
+        font-size: 1.2rem;
+        line-height: 1.8rem;
+        font-weight: 600;
+        font-family: "Pretendard Variable", sans-serif;
+        color: var(--main-color-30);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .workingTime {
+        width: 9rem;
+        font-size: 1.2rem;
+        line-height: 1.8rem;
+        margin-left: 0.5rem;
+        color: var(--text-black-50);
+        font-weight: 400;
+      }
+    }
+  }
+
+  .dashboard {
+    width: 100%;
+    height: 100%;
+    padding: 2.4rem 2.8rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    .up {
+      display: flex;
+      height: 33rem;
+      margin-bottom: 1.5rem;
+
+      .dashboardCalendar {
+        min-width: 62rem;
+        width: 100%;
+        margin-right: 2rem;
+        border-radius: 15px;
+        border: 1px solid #bedcff;
+
+        .react-calendar {
+          width: 100%;
+          height: 100%;
+          border: 0;
+          border-radius: 15px;
+        }
+
+        .react-calendar__navigation {
+          padding: 0 6rem;
+
+          .react-calendar__navigation__label__labelText {
+            font-size: 1.6rem;
+            line-height: 1.8rem;
+            font-weight: 600;
+            font-family: "Pretendard Variable", sans-serif;
+            color: var(--main-color-30);
+          }
+
+          .react-calendar__navigation__prev-button {
+            font-family: "Pretendard Variable", sans-serif;
+            color: var(--main-color-30);
+            font-weight: 600;
+            font-size: 2rem;
+          }
+
+          .react-calendar__navigation__next-button {
+            font-family: "Pretendard Variable", sans-serif;
+            color: var(--main-color-30);
+            font-weight: 600;
+            font-size: 2rem;
+          }
+        }
+
+        .react-calendar__navigation__prev2-button,
+        .react-calendar__navigation__next2-button,
+        .react-calendar__month-view__weekdays__weekday {
+          display: none;
+        }
+
+        .react-calendar__viewContainer {
+          height: 27.6rem;
+          width: 100%;
+          .react-calendar__month-view {
+            height: 100%;
+          }
+          .react-calendar__month-view__days {
+            padding: 2rem 4rem;
+            height: 27.6rem;
+          }
+        }
+
+        // 이번달 아닌거는 잘 안보이게
+        .react-calendar__month-view__days__day--neighboringMonth {
+          color: var(--text-black-10);
+        }
+
+        .react-calendar__month-view__days__day {
+          font-size: 1.4rem;
+          line-height: 2.1rem;
+          font-family: "Pretendard Variable", sans-serif;
+        }
+
+        .react-calendar__year-view__months__month {
+          font-size: 1.2rem;
+          line-height: 1.7rem;
+          font-family: "Pretendard Variable", sans-serif;
+        }
+
+        //현재 날짜 표시
+        .react-calendar__tile--now {
+          background-color: var(--main-color-30) !important;
+          border-radius: 15px;
+        }
+        .react-calendar__tile--active {
+          background-color: white;
+          color: black;
+        }
+        //hover 적용 없애기
+
+        .react-calendar__tile:enabled:hover,
+        .react-calendar__navigation button:enabled:hover {
+          background-color: transparent;
+        }
+      }
+
+      .dashboardMemoContainer {
+        max-width: 30rem;
+        min-width: 25rem;
+        width: 100%;
+        background-color: #f8f8f8;
+        border-radius: 15px;
+        padding: 2rem 2.4rem;
+
+        .dashboardMemo {
+          font-size: 1.6rem;
+          line-height: 2.4rem;
+          font-weight: 700;
+          border-radius: 15px;
+          font-family: "Pretendard Variable", sans-serif;
+          margin-bottom: 0.4rem;
+          background-color: #f8f8f8;
+        }
+
+        .memo {
+          width: 100%;
+          height: 22rem;
+          resize: none;
+          border: none;
+          outline: none;
+          border-radius: 15px;
+          box-sizing: border-box;
+          font-size: 1.2rem;
+          line-height: 1.8rem;
+          font-weight: 500;
+          font-family: "Pretendard Variable", sans-serif;
+          background-color: #f8f8f8;
+        }
+        .memo::placeholder {
+          color: #d0d0d0;
+        }
+      }
+    }
+    .down {
+      height: 29rem;
+      display: flex;
+
+      .dashboardTodoContainer {
+        min-width: 38rem;
+        width: 100%;
+        margin-right: 2rem;
+        border-radius: 15px;
+        background-color: #f8f8f8;
+        padding: 2rem 2.4rem;
+
+        .dashboardTodo {
+          width: 6rem;
+          height: 3.4rem;
+          border-radius: 15px;
+          background-color: #bedcff;
+          color: white;
+          font-size: 1.6rem;
+          font-weight: 700;
+          line-height: 3.4rem;
+          text-align: center;
+          margin-bottom: 1rem;
+        }
+
+        .dashboardTodoBox {
+          min-width: 30rem;
+          max-width: 37rem;
+          height: 5.5rem;
+          padding: 0.8rem 2rem;
+          margin-bottom: 0.8rem;
+          box-sizing: border-box;
+          border-radius: 15px;
+          background-color: white;
+          display: flex;
+          align-items: center;
+
+          .dashboardTodoState {
+            width: 2.7rem;
+            height: 2.7rem;
+            border-radius: 50%;
+            background-color: #bedcff;
+            margin-right: 1rem;
+            box-sizing: border-box;
+            padding: 0;
+          }
+
+          .dashboardTodoContent {
+            display: flex;
+            flex-direction: column;
+            padding: 0;
+
+            .dashboardTodoTitle {
+              width: 100%;
+              font-size: 1.4rem;
+              line-height: 2.1rem;
+              font-weight: 700;
+              font-family: "Pretendard Variable", sans-serif;
+            }
+            .dashboardTodoDate {
+              width: 100%;
+              font-size: 1.2rem;
+              line-height: 1.8rem;
+              font-weight: 700;
+              font-family: "Pretendard Variable", sans-serif;
+              color: #bedcff;
+            }
+          }
+        }
+      }
+
+      .dashboardScheduleContainer {
+        min-width: 38rem;
+        width: 100%;
+        border-radius: 15px;
+        border: 1px solid #bedcff;
+        padding: 2rem 2.4rem;
+
+        .dashboardSchedule {
+          font-size: 1.6rem;
+          line-height: 2.4rem;
+          font-weight: 700;
+          font-family: "Pretendard Variable", sans-serif;
+          margin-bottom: 1rem;
+        }
+        .dashboarddashboardScheduleBox {
+          max-width: 39.5rem;
+          width: 100%;
+          height: 5.5rem;
+          background-color: #deedff;
+          border: 1px solid #bedcff;
+          border-radius: 15px;
+          margin-bottom: 0.8rem;
+
+          .dashboardScheduleContent {
+            padding: 0.8rem 1.6rem;
+
+            .scheduleTitle {
+              font-size: 1.4rem;
+              line-height: 2.1rem;
+              font-weight: 700;
+            }
+
+            .scheduleDate {
+              font-size: 1.2rem;
+              line-height: 1.8rem;
+              font-weight: 600;
+              color: var(--main-color-30);
+            }
+          }
+        }
+      }
+    }
+  }
+}

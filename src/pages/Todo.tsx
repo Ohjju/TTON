@@ -1,5 +1,6 @@
 import "../styles/global.scss";
 import "../styles/todo.scss";
+import Header from "../components/Header";
 import TodoBox from "../components/TodoBox";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlus, faBars, faBell } from "@fortawesome/free-solid-svg-icons";
@@ -10,7 +11,8 @@ import TodoSide from "../components/TodoSide";
 export default function Todo() {
   const TodoID = useRef<number>(2);
   const DoingID = useRef<number>(2);
-  const DoneID = useRef<number>(0);
+  const DoneID = useRef<number>(1);
+
   // todo 목록
   const [inputTodo, setInputTodo] = useState<any>([
     {
@@ -97,6 +99,10 @@ export default function Todo() {
     },
   ]);
 
+  //할일 개수
+  const todoLen = inputTodo.length;
+  const doingLen = inputDoing.length;
+
   // todo 추가
   function addTodo() {
     const newTodo = {
@@ -112,20 +118,6 @@ export default function Todo() {
     setInputTodo([...inputTodo, newTodo]); // 새로운 인풋객체 추가
     TodoID.current += 1; // id값은 1씩 늘려줌
   }
-
-  // todo마다 id 부여
-  // id=1부터 시작, 0은 제일 마지막
-  // var todoCount = 1;
-  // function addTodoId() {
-  //   // querySelector 때문에 첫번째에만 적용됨
-  //   const itemNew = document.querySelector(".test");
-  //   var next = itemNew;
-  //   while (next) {
-  //     next?.setAttribute("id", "item_" + todoCount);
-  //     todoCount = todoCount + 1;
-  //     next = next?.nextElementSibling;
-  //   }
-  // }
 
   // doing 추가
   function addDoing() {
@@ -161,14 +153,7 @@ export default function Todo() {
 
   return (
     <>
-      <header className="header">
-        <FontAwesomeIcon className="hamburger" icon={faBars} />
-        <div className="logo"></div>
-        <div className="rightIcon">
-          <FontAwesomeIcon className="alarm" icon={faBell} />
-          <div className="me"></div>
-        </div>
-      </header>
+      <Header />
       <div className="todoContainer ">
         <div className="left">
           <div className="miniCalendar shadow"></div>
@@ -183,7 +168,7 @@ export default function Todo() {
                 <div style={{ display: "flex" }}>
                   <div className="state"></div>
                   <div className="title">해야할 일</div>
-                  <div className="count">{inputTodo.length}</div>
+                  <div className="count">{todoLen}</div>
                 </div>
                 <FontAwesomeIcon
                   className="addTodo"
@@ -199,7 +184,9 @@ export default function Todo() {
                 <div style={{ display: "flex" }}>
                   <div className="state"></div>
                   <div className="title">진행 중</div>
-                  <div className="count">{inputDoing.length}</div>
+                  <div className="count" id="count">
+                    {doingLen}
+                  </div>
                 </div>
                 <FontAwesomeIcon
                   className="addTodo"
@@ -237,7 +224,6 @@ export default function Todo() {
                           key={index}
                         >
                           {item.To}
-                          {/* 얘가 업데이트 안됨 - 처음 상태 유지 */}
                         </div>
                       </>
                     );

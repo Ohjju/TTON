@@ -6,4 +6,6 @@ export const DeleteTodo = (count: any): void => {
   ) as HTMLInputElement;
   current.remove();
   currentTodoDrop.remove();
+  // document.getElementById("count")?.textContent;
+  console.log(document.querySelector(".count")?.firstChild?.nodeValue);
 };
