@@ -1,11 +1,15 @@
 import "../styles/todoDropdown.scss";
 import { useState, useRef, useEffect } from "react";
 // chageColor = 입력받은 color로 현재 boxColor를 바꿔주는 함수
-import { ChangeColor } from "./ChangeColor";
+import { ChangeTodoColor } from "./ChangeTodoColor";
 import { ChangeDoingColor } from "./ChangeDoingColor";
 import { ChangeDoneColor } from "./ChangeDoneColor";
-import { ChangeState } from "./ChangeState";
+import { ChangeTodoState } from "./ChangeTodoState";
+import { ChangeDoingState } from "./ChangeDoingState";
+import { ChangeDoneState } from "./ChangeDoneState";
 import { DeleteTodo } from "./DeleteTodo";
+import { DeleteDoing } from "./DeleteDoing";
+import { DeleteDone } from "./DeleteDone";
 
 // 함수앞에 use 붙이고 upper형식으로 적어주기!!(오류)
 export default function useTodoDropdown(props: any) {
@@ -39,7 +43,11 @@ export default function useTodoDropdown(props: any) {
             className="selectTodo"
             onClick={() => {
               setTodoStateColor(states[0]);
-              ChangeState(todoStateColor, todoId);
+              todoId
+                ? ChangeTodoState(todoStateColor, todoId)
+                : doingId
+                ? ChangeDoingState(todoStateColor, doingId)
+                : ChangeDoneState(todoStateColor, doneId);
             }}
           >
             <div className="stateTodo">예정</div>
@@ -48,7 +56,11 @@ export default function useTodoDropdown(props: any) {
             className="selectDoing"
             onClick={() => {
               setDoingStateColor(states[1]);
-              ChangeState(doingStateColor, todoId);
+              todoId
+                ? ChangeTodoState(doingStateColor, todoId)
+                : doingId
+                ? ChangeDoingState(doingStateColor, doingId)
+                : ChangeDoneState(doingStateColor, doneId);
             }}
           >
             <div className="stateDoing">진행 중</div>
@@ -57,7 +69,11 @@ export default function useTodoDropdown(props: any) {
             className="selectDone"
             onClick={() => {
               setDoneStateColor(states[2]);
-              ChangeState(doneStateColor, todoId);
+              todoId
+                ? ChangeTodoState(doneStateColor, todoId)
+                : doingId
+                ? ChangeDoingState(doneStateColor, doingId)
+                : ChangeDoneState(doneStateColor, doneId);
             }}
           >
             <div className="stateDone">완료</div>
@@ -77,7 +93,7 @@ export default function useTodoDropdown(props: any) {
             onClick={() => {
               setPinkColor(colors[0]);
               todoId
-                ? ChangeColor(pinkColor, todoId)
+                ? ChangeTodoColor(pinkColor, todoId)
                 : doingId
                 ? ChangeDoingColor(pinkColor, doingId)
                 : ChangeDoneColor(pinkColor, doneId);
@@ -90,7 +106,7 @@ export default function useTodoDropdown(props: any) {
             onClick={() => {
               setGreenColor(colors[1]);
               todoId
-                ? ChangeColor(greenColor, todoId)
+                ? ChangeTodoColor(greenColor, todoId)
                 : doingId
                 ? ChangeDoingColor(greenColor, doingId)
                 : ChangeDoneColor(greenColor, doneId);
@@ -103,7 +119,7 @@ export default function useTodoDropdown(props: any) {
             onClick={() => {
               setGrayColor(colors[2]);
               todoId
-                ? ChangeColor(grayColor, todoId)
+                ? ChangeTodoColor(grayColor, todoId)
                 : doingId
                 ? ChangeDoingColor(grayColor, doingId)
                 : ChangeDoneColor(grayColor, doneId);
@@ -116,7 +132,7 @@ export default function useTodoDropdown(props: any) {
             onClick={() => {
               setBrownColor(colors[3]);
               todoId
-                ? ChangeColor(brownColor, todoId)
+                ? ChangeTodoColor(brownColor, todoId)
                 : doingId
                 ? ChangeDoingColor(brownColor, doingId)
                 : ChangeDoneColor(brownColor, doneId);
@@ -135,7 +151,11 @@ export default function useTodoDropdown(props: any) {
         <div
           className="delete"
           onClick={() => {
-            DeleteTodo(todoId);
+            todoId
+              ? DeleteTodo(todoId)
+              : doingId
+              ? DeleteDoing(doingId)
+              : DeleteDone(doneId);
           }}
         >
           일정 삭제

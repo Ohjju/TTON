@@ -16,12 +16,7 @@ interface IProps {
 }
 
 const CustomDatePicker = (props: IProps) => {
-  // const CustomDatePicker = () => {
-  // const [startDate, setStartDate] = useState();
-  // const [endDate, setEndDate] = useState();
-
   const _ = require("lodash");
-
   // 월 선택 select box에 보여질 데이터
   const months = [
     "1",
@@ -48,17 +43,13 @@ const CustomDatePicker = (props: IProps) => {
           increaseMonth,
           prevMonthButtonDisabled,
           nextMonthButtonDisabled,
-        }) => (
+        }: any) => (
           <div className="custom-react-datepicker__select-wrapper">
             {/* 이전 월로 이동하는 버튼 */}
             <button onClick={decreaseMonth} disabled={prevMonthButtonDisabled}>
               <FontAwesomeIcon
                 icon={faChevronLeft}
                 style={{ fontSize: "1rem" }}
-                onClick={() => {
-                  console.log(props.setStartDate);
-                  console.log(props.startDate);
-                }}
               />
             </button>
 
@@ -101,7 +92,7 @@ const CustomDatePicker = (props: IProps) => {
         )}
         dateFormat="yy.MM.dd" // 선택된 날짜를 input box에 나타내는 형식
         selected={new Date(props.startDate)}
-        onChange={(date) => props.setStartDate(date)} // 선택한 날짜를 state에 저장
+        onChange={(date: any) => props.setStartDate(date)} // 선택한 날짜를 state에 저장
         selectsStart
         startDate={new Date(props.startDate)}
         endDate={new Date(props.endDate)}
@@ -118,7 +109,7 @@ const CustomDatePicker = (props: IProps) => {
           increaseMonth,
           prevMonthButtonDisabled,
           nextMonthButtonDisabled,
-        }) => (
+        }: any) => (
           <div className="custom-react-datepicker__select-wrapper">
             <button onClick={decreaseMonth} disabled={prevMonthButtonDisabled}>
               <FontAwesomeIcon
@@ -165,7 +156,7 @@ const CustomDatePicker = (props: IProps) => {
         // value=""
         dateFormat="yy.MM.dd"
         selected={new Date(props.endDate)}
-        onChange={(date) => props.setEndDate(date)}
+        onChange={(date: any) => props.setEndDate(date)}
         selectsEnd
         startDate={new Date(props.startDate)}
         endDate={new Date(props.endDate)}
