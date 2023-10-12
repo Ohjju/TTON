@@ -5,18 +5,39 @@ import InputContent from "../components/InputContent";
 import BoardSideDetail from "../components/BoardSideDetail";
 import InputRipple from "../components/InputRipple";
 
+import { useDispatch, useSelector } from "react-redux";
+import {
+  writeContent,
+  updateContent,
+  deleteContent,
+} from "../store/modules/boardReducer";
+import { boardItem } from "../store/modules/boardTypes";
+
 export interface PropsType {
-  setIsShow: React.Dispatch<SetStateAction<boolean>>;
+  key: number;
+  content: string;
+  writer: string;
+  checkedCnt: number;
+  profileImg: string;
   isShow: boolean;
+  setIsShow: React.Dispatch<SetStateAction<boolean>>;
+  currentBoardID: number;
+  setCurrentBoardID: React.Dispatch<SetStateAction<number>>;
+}
+
+export interface PropsTypeRipple {
+  currentBoardID: number;
 }
 
 export default function BoardContent() {
   const [isShow, setIsShow] = useState(false);
+  const [currentBoardID, setCurrentBoardID] = useState<number>(0);
 
-  console.log(isShow);
-  // const handleShow = (value: boolean) => {
-  //   setIsShow(!value);
-  // };
+  const boardList = useSelector((state: any) => state.boardReducer.list);
+
+  const boardFilteredList = boardList.filter(
+    (el: boardItem) => el.isDeleted === false
+  );
 
   return (
     <>
@@ -27,12 +48,21 @@ export default function BoardContent() {
         <div className="board-area">
           <div className="board-content">
             <div className="detail-area">
-              <BoardDetail isShow={isShow} setIsShow={setIsShow} />
-              <BoardDetail isShow={isShow} setIsShow={setIsShow} />
-              <BoardDetail isShow={isShow} setIsShow={setIsShow} />
-              <BoardDetail isShow={isShow} setIsShow={setIsShow} />
-              <BoardDetail isShow={isShow} setIsShow={setIsShow} />
-              <BoardDetail isShow={isShow} setIsShow={setIsShow} />
+              {boardFilteredList.map((el: boardItem) => {
+                return (
+                  <BoardDetail
+                    key={el.boardID}
+                    content={el.content}
+                    writer={el.writer}
+                    checkedCnt={el.checkedCnt}
+                    profileImg={el.profileImg}
+                    isShow={isShow}
+                    setIsShow={setIsShow}
+                    currentBoardID={el.boardID}
+                    setCurrentBoardID={setCurrentBoardID}
+                  />
+                );
+              })}
             </div>
             <div className="message-area">
               <InputContent />
@@ -42,22 +72,13 @@ export default function BoardContent() {
           {isShow === true && (
             <div className="side-content">
               <div className="side-detail">
-                <BoardSideDetail />
+                <BoardSideDetail currentBoardID={currentBoardID} />
               </div>
               <div className="ripple-area">
-                <InputRipple />
+                <InputRipple currentBoardID={currentBoardID} />
               </div>
             </div>
           )}
-
-          {/* <div className="side-content">
-            <div className="side-detail">
-              <BoardSideDetail />
-            </div>
-            <div className="ripple-area">
-              <InputRipple />
-            </div>
-          </div> */}
         </div>
       </section>
     </>
