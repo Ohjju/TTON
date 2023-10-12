@@ -1,4 +1,5 @@
 import "../styles/global.scss";
+import "../styles/calendarSide.scss";
 
 export default function SideBar() {
   return (

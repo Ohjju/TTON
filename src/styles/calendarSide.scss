@@ -1,0 +1,22 @@
+.side-bar {
+  width: 20rem;
+
+  .mini-list {
+    margin-top: 20px;
+
+    .mini-list-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px;
+    }
+  }
+
+  .mini-list-content {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+  }
+}
