@@ -89,6 +89,10 @@ p {
   display: flex;
 }
 
+.flex-row-reserve {
+  flex-direction: row-reverse;
+}
+
 .header {
   height: 70px;
   background-color: #cbe3ff;
@@ -106,7 +110,7 @@ p {
       .profile-status {
         width: 3.4rem;
         height: 3.4rem;
-        background-color: gray;
+        background-color: white;
         border-radius: 50%;
       }
 
