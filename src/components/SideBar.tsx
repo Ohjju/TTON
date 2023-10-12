@@ -8,18 +8,10 @@ export default function SideBar() {
           <div className="mini-cal-head">
             <h4>9월</h4>
           </div>
-          <div className="mini-cal-main">
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Deserunt
-            dolores numquam illo ad praesentium similique repellendus beatae
-            eius quod sit quo consequatur aperiam suscipit adipisci dignissimos,
-            rem illum atque nihil.
-          </div>
+          <div className="mini-cal-main"></div>
         </div>
         <div className="mini-list">
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Deserunt
-          dolores numquam illo ad praesentium similique repellendus beatae eius
-          quod sit quo consequatur aperiam suscipit adipisci dignissimos, rem
-          illum atque nihil.
+          <p>새싹상사</p>
         </div>
       </nav>
     </>

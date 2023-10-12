@@ -53,9 +53,7 @@
     ]
   },
   "devDependencies": {
-
-    "@types/react-datepicker": "^4.15.1"
-
+    "@types/react-datepicker": "^4.15.1",
     "@types/redux-persist": "^4.3.1"
 
   }

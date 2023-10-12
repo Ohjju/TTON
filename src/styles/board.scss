@@ -33,7 +33,7 @@ button {
   // 2) 게시글 영역
   .board-area {
     width: 100%;
-    height: 500px;
+    height: calc(100% - 3rem);
     border-radius: 0 0 15px 15px;
     background-color: #ffffff;
     padding: 1.2rem;
@@ -43,10 +43,11 @@ button {
     .board-content {
       display: flex;
       position: relative;
+      width: 100%;
 
       .detail-area {
         width: 100%;
-        height: 300px;
+        height: calc(100% - 16.4rem);
         overflow-y: scroll;
       }
 
@@ -81,7 +82,11 @@ button {
 
           .submit-area {
             display: flex;
-            justify-content: flex-end;
+            justify-content: space-between;
+
+            .file-upload-btn {
+              background-color: var(--text-black-30);
+            }
 
             button {
               width: 5.8rem;
@@ -103,11 +108,25 @@ button {
     .side-content {
       width: 100%;
       position: relative;
+      background-color: #e7e7e7;
 
       .side-detail {
         width: 100%;
-        height: 300px;
+        height: calc(100% - 16.4rem);
         overflow-y: scroll;
+
+        .board-side-detail {
+          .view-detail {
+            font-weight: 600;
+            margin-top: 1rem;
+            margin-left: 1rem;
+          }
+
+          .ripple-side {
+            padding-top: 2.4rem;
+            padding-bottom: 2rem;
+          }
+        }
       }
 
       .ripple-area {
@@ -141,7 +160,7 @@ button {
 
           .submit-area {
             display: flex;
-            justify-content: flex-end;
+            justify-content: space-between;
 
             button {
               width: 5.8rem;
@@ -149,6 +168,10 @@ button {
               background-color: var(--main-color-30);
               border-radius: 15px;
               margin: 0 0.5rem;
+            }
+
+            .file-upload-btn {
+              background-color: var(--text-black-30);
             }
 
             p {
@@ -168,9 +191,11 @@ button {
   padding: 1rem 2rem;
   display: flex;
   justify-content: space-between;
+  border-bottom: 1px white solid;
+  position: relative;
 
   .content-area {
-    max-width: 80%;
+    max-width: 90%;
     display: flex;
 
     .user-profile {
@@ -184,6 +209,7 @@ button {
         height: 100%;
         border-radius: 50%;
         border: 0.5px solid #f1f1f1;
+        background: #ffffff;
       }
     }
 
@@ -235,6 +261,49 @@ button {
     img {
       height: 2rem;
       cursor: pointer;
+    }
+  }
+
+  .more-modal {
+    width: 16rem;
+    position: absolute;
+    top: 30px;
+    right: 10px;
+    border-radius: 10px;
+    border: 1px solid #cbe3ff;
+    background: #f8f8f8;
+    z-index: 99;
+
+    ul {
+      padding-top: 0.8rem;
+      padding-bottom: 0.8rem;
+
+      li {
+        padding-top: 0.2rem;
+        padding-bottom: 0.2rem;
+
+        &:nth-child(2) {
+          border-bottom: 1px solid #cbe3ff;
+          padding-bottom: 0.8rem;
+        }
+
+        &:nth-child(3) {
+          padding-top: 0.8rem;
+        }
+
+        p {
+          color: #5d5d5d;
+          font-size: 1.4rem;
+          padding-right: 1.2rem;
+          padding-left: 1.2rem;
+
+          &:hover {
+            cursor: pointer;
+            color: #ffffff;
+            background-color: #81caff;
+          }
+        }
+      }
     }
   }
 }
