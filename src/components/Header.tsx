@@ -34,7 +34,7 @@ export default function Header(props: any) {
             }}
           />
         )}
-        <Link to="/">
+        <Link to="/dashboard">
           <div className="logo"></div>
         </Link>
         <div className="rightIcon">
@@ -46,7 +46,7 @@ export default function Header(props: any) {
       <nav className="nav">
         <ul className="list">
           <li>
-            <Link to="/">
+            <Link to="/dashboard">
               <FontAwesomeIcon icon={faHouse} className="gotoHomeIcon" />
             </Link>
           </li>
