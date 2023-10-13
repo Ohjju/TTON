@@ -25,7 +25,6 @@ export default function BoardDetail({
   const [rippleCnt, setRippleCnt] = useState(false);
   const dispatch = useDispatch();
 
-  console.log(content);
   //현재 게시글 ID 기준으로 댓글 가져오기
   const rippleList = useSelector((state: any) => state.rippleReducer.list);
   const rippleFilteredList = rippleList.filter(
