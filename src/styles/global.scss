@@ -123,11 +123,12 @@ p {
 }
 
 .side-bar {
-  height: 100%;
   width: 20rem;
+  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+
   .mini-cal {
     width: 100%;
     margin-bottom: 2rem;
@@ -143,6 +144,23 @@ p {
       height: 18rem;
       background-color: white;
       border-radius: 0 0 15px 15px;
+    }
+  }
+  .mini {
+    // height: 30%;
+    height: 34%;
+  }
+  .mini-list {
+    // margin-top: 20px;
+    height: 62%;
+    border-radius: 15px;
+    background-color: white;
+
+    .mini-list-add {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px;
     }
   }
 }

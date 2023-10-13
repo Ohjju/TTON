@@ -163,7 +163,7 @@ function MainCalendar() {
         buttonText={{
           today: "오늘",
         }}
-        height={710}
+        height="100%"
       />
     </div>
   );
