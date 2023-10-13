@@ -43,7 +43,7 @@ export default function Dashboard() {
           <Link to="/board" className="gotoBoard">
             <FontAwesomeIcon icon={faClipboard} className="gotoBoardIcon" />
           </Link>
-          <Link to="/calender" className="gotoCalendar">
+          <Link to="/calendar" className="gotoCalendar">
             <FontAwesomeIcon
               icon={faCalendarDays}
               className="gotoCalendarIcon"
