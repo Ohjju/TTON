@@ -37,7 +37,7 @@ export default function Dashboard() {
       <Header dashboard={dashboard} />
       <div className="dashboardContainer">
         <div className="sideMenu">
-          <Link to="/" className="gotoHome">
+          <Link to="/dashboard" className="gotoHome">
             <FontAwesomeIcon icon={faHouse} className="gotoHomeIcon" />
           </Link>
           <Link to="/board" className="gotoBoard">

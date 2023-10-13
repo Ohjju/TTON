@@ -1,4 +1,5 @@
 import { Route, Routes } from "react-router-dom";
+import Login from "./pages/Login";
 import Dashboard from "./pages/Dashboard";
 import Calendar from "./pages/Calendar";
 import Todo from "./pages/Todo";
@@ -9,7 +10,8 @@ function App() {
   return (
     <>
       <Routes>
-        <Route path="/" element={<Dashboard />}></Route>
+        <Route path="/" element={<Login />}></Route>
+        <Route path="/dashboard" element={<Dashboard />}></Route>
         <Route path="/calendar" element={<Calendar />}></Route>
         <Route path="/todo" element={<Todo />}></Route>
         <Route path="/board" element={<Board />}></Route>
