@@ -123,8 +123,11 @@ p {
 }
 
 .side-bar {
+  height: 100%;
   width: 20rem;
-
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   .mini-cal {
     width: 100%;
     margin-bottom: 2rem;

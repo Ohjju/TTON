@@ -1,9 +1,17 @@
 .side-bar {
   width: 20rem;
+  //   background-color: red;
+  height: 100%;
+
+  .mini {
+    height: 30%;
+  }
 
   .mini-list {
     margin-top: 20px;
-    height: 520px; //
+    height: 65%;
+    border-radius: 15px;
+    background-color: white;
 
     .mini-list-add {
       display: flex;
