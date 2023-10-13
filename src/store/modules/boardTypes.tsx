@@ -11,6 +11,7 @@ export type boardItem = {
   content: string;
   writer: string;
   isDeleted: boolean;
+  isChecked: boolean;
   checkedCnt: number;
   profileImg: string;
   nextID?: number;

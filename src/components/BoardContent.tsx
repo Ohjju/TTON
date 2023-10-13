@@ -17,6 +17,7 @@ export interface PropsType {
   key: number;
   content: string;
   writer: string;
+  isChecked: boolean;
   checkedCnt: number;
   profileImg: string;
   isShow: boolean;
@@ -56,6 +57,7 @@ export default function BoardContent() {
                     writer={el.writer}
                     checkedCnt={el.checkedCnt}
                     profileImg={el.profileImg}
+                    isChecked={el.isChecked}
                     isShow={isShow}
                     setIsShow={setIsShow}
                     currentBoardID={el.boardID}

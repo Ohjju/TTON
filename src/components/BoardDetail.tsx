@@ -1,7 +1,12 @@
 import { PropsType } from "../components/BoardContent";
-import { useState } from "react";
-import { useDispatch } from "react-redux";
-import { deleteContent } from "../store/modules/boardReducer";
+import { useState, useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  deleteContent,
+  checkContent,
+  unCheckContent,
+} from "../store/modules/boardReducer";
+import { rippleItem } from "../store/modules/rippleTypes";
 
 const moreIcon = require("../assets/img/more.png");
 
@@ -11,12 +16,35 @@ export default function BoardDetail({
   currentBoardID,
   setCurrentBoardID,
   content,
+  isChecked,
   checkedCnt,
   profileImg,
   writer,
 }: PropsType) {
   const [isModalShow, setIsModalShow] = useState(false);
+  const [rippleCnt, setRippleCnt] = useState(false);
   const dispatch = useDispatch();
+
+  //현재 게시글 ID 기준으로 댓글 가져오기
+  const rippleList = useSelector((state: any) => state.rippleReducer.list);
+  const rippleFilteredList = rippleList.filter(
+    (el: rippleItem) => el.boardID === currentBoardID && el.isDeleted === false
+  );
+
+  console.log(rippleFilteredList.length);
+
+  useEffect(() => {
+    setRippleCnt(rippleFilteredList.length);
+  });
+
+  function unCheckedHandle() {
+    dispatch(unCheckContent({ currentBoardID }));
+  }
+
+  function checkedHandle() {
+    dispatch(checkContent({ currentBoardID }));
+    // alert("체크 하겠슴");
+  }
 
   return (
     <>
@@ -43,16 +71,25 @@ export default function BoardDetail({
             </div>
             <div className="content-check">
               <div className="check-status">
-                {checkedCnt === 0 ? (
-                  <i
-                    className="fa-solid fa-square-check"
-                    style={{ color: "#d9d9d9" }}
-                  ></i>
+                {isChecked === false ? (
+                  <>
+                    <i
+                      className="fa-solid fa-square-check"
+                      style={{ color: "#d9d9d9" }}
+                      onClick={() => {
+                        checkedHandle();
+                      }}
+                    ></i>
+                    {checkedCnt > 0 && <p>{checkedCnt}</p>}
+                  </>
                 ) : (
                   <>
                     <i
                       className="fa-solid fa-square-check"
                       style={{ color: "#81caff" }}
+                      onClick={() => {
+                        unCheckedHandle();
+                      }}
                     ></i>
                     <p>{checkedCnt}</p>
                   </>
@@ -69,7 +106,7 @@ export default function BoardDetail({
                   className="fa-solid fa-comment"
                   style={{ color: "#81caff" }}
                 ></i>
-                <p>2</p>
+                <p>{rippleCnt}</p>
               </div>
             </div>
           </div>

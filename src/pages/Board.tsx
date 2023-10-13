@@ -1,9 +1,10 @@
+import "../styles/global.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faBell } from "@fortawesome/free-solid-svg-icons";
-import SideBar from "../components/SideBar";
+import SideBarBoard from "../components/SideBarBoard";
 import BoardContent from "../components/BoardContent";
-import "../styles/global.scss";
 import Header from "../components/Header";
+
 
 // 게시판
 export default function Board() {
@@ -20,7 +21,7 @@ export default function Board() {
       </header> */}
       <Header gotoBoard="--main-color-30" />
       <main className="container side-style">
-        <SideBar></SideBar>
+        <SideBarBoard></SideBarBoard>
         <BoardContent></BoardContent>
       </main>
     </>
