@@ -69,14 +69,17 @@ button {
             width: 100%;
             border: 0;
             background-color: #f8f8f8;
-            // 높이 조절만 가능
-            resize: vertical;
+            resize: none;
             font-size: 1.4rem;
             margin-bottom: 1rem;
 
             &::placeholder {
               font-family: "Pretendard Variable", sans-serif;
               color: var(--text-black-50);
+            }
+
+            &:focus {
+              outline: none;
             }
           }
 
@@ -147,14 +150,17 @@ button {
             width: 100%;
             border: 0;
             background-color: #f8f8f8;
-            // 높이 조절만 가능
-            resize: vertical;
+            resize: none;
             font-size: 1.4rem;
             margin-bottom: 1rem;
 
             &::placeholder {
               font-family: "Pretendard Variable", sans-serif;
               color: var(--text-black-50);
+            }
+
+            &:focus {
+              outline: none;
             }
           }
 
@@ -272,7 +278,7 @@ button {
     border-radius: 10px;
     border: 1px solid #cbe3ff;
     background: #f8f8f8;
-    z-index: 99;
+    z-index: 999;
 
     ul {
       padding-top: 0.8rem;

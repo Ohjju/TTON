@@ -17,6 +17,7 @@ export default function InputContent() {
         profileImg: "/img/jeong_user.png",
         writer: "정과장",
         isDeleted: false,
+        isChecked: false,
         checkedCnt: 0,
       })
     );
