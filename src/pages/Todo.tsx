@@ -6,6 +6,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlus, faBars, faBell } from "@fortawesome/free-solid-svg-icons";
 import { useState, useRef } from "react";
 import TodoSide from "../components/TodoSide";
+import MiniCalendar from "../components/MiniCalendar";
 
 // todo 목록
 export default function Todo() {
@@ -153,10 +154,12 @@ export default function Todo() {
 
   return (
     <>
-      <Header />
+      <Header gotoTodo="--main-color-30" />
       <div className="todoContainer ">
         <div className="left">
-          <div className="miniCalendar shadow"></div>
+          <div className="miniCalendar shadow">
+            <MiniCalendar />
+          </div>
           <div className="whiteBox shadow">
             <TodoSide />
           </div>

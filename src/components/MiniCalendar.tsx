@@ -1,5 +1,5 @@
 import Calendar from "react-calendar";
-import "../styles/miniCalendar.css";
+import "../styles/miniCalendar.scss";
 import { useState } from "react";
 
 type ValuePiece = Date | null;
@@ -10,7 +10,7 @@ export default function MiniCalendar() {
   const [value, onChange] = useState<Value>(new Date());
 
   return (
-    <>
+    <div className="mini">
       <Calendar
         value={value}
         onChange={onChange}
@@ -21,6 +21,6 @@ export default function MiniCalendar() {
         prev2Label={null} // 이전 커서
         showNeighboringMonth={false} // 지난 날짜 보이지 않게 설정
       />
-    </>
+    </div>
   );
 }

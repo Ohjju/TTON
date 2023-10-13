@@ -9,7 +9,7 @@ import { faClipboard } from "@fortawesome/free-solid-svg-icons";
 import { faCalendarDays } from "@fortawesome/free-solid-svg-icons";
 import { faSquareCheck } from "@fortawesome/free-solid-svg-icons";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
-
+import Header from "./Header";
 const userImg = require("../assets/img/user/profile.png");
 const logo = require("../assets/img/logo.png");
 
@@ -21,7 +21,8 @@ export default function StatusBar() {
   };
   return (
     <>
-      <header className="header">
+      <Header />
+      {/* <header className="header">
         <FontAwesomeIcon
           onClick={toggleNav}
           icon={faBars}
@@ -50,7 +51,7 @@ export default function StatusBar() {
             </div>
           </li>
         </ul>
-      </header>
+      </header> */}
       <div>
         {toggleMenu && (
           <nav className="nav">
