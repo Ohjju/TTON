@@ -25,13 +25,12 @@ export default function BoardDetail({
   const [rippleCnt, setRippleCnt] = useState(false);
   const dispatch = useDispatch();
 
+  console.log(content);
   //현재 게시글 ID 기준으로 댓글 가져오기
   const rippleList = useSelector((state: any) => state.rippleReducer.list);
   const rippleFilteredList = rippleList.filter(
     (el: rippleItem) => el.boardID === currentBoardID && el.isDeleted === false
   );
-
-  console.log(rippleFilteredList.length);
 
   useEffect(() => {
     setRippleCnt(rippleFilteredList.length);
@@ -43,7 +42,6 @@ export default function BoardDetail({
 
   function checkedHandle() {
     dispatch(checkContent({ currentBoardID }));
-    // alert("체크 하겠슴");
   }
 
   return (
