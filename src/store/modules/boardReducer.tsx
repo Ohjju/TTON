@@ -57,7 +57,7 @@ const initialState = {
     {
       boardID: 0,
       content:
-        "가슴 속에 하나 둘 새겨지는 별을 이제 다 못 헤는 것은 쉬이 아침이 오는 까닭이요, 내일 밤이 남은 까닭이요, 아직 나의 청춘이 다하지 않은 까닭입니다. 딴은 밤을 세워 우는 벌레는 부끄러운 이름을 슬퍼하는 까닭입니다",
+        "너무 소심하고 까다롭게 자신의 행동을 고민하지 말라 . 모든 인생은 실험이다 . 더많이 실험할수록 더나아진다 – 랄프 왈도 에머슨",
       writer: "정과장",
       isDeleted: false,
       isChecked: false,
@@ -66,7 +66,8 @@ const initialState = {
     },
     {
       boardID: 1,
-      content: "오늘까지 업무 모두 끝내도록 하세요!!!!",
+      content:
+        "안녕하세요~! 좋은 아침입니다 :) 오늘까지 기획서 수정에서 제출해주세요.",
       writer: "한부장",
       isDeleted: false,
       isChecked: false,
@@ -99,6 +100,15 @@ const initialState = {
       isChecked: false,
       checkedCnt: 0,
       profileImg: "/img/oh_user.png",
+    },
+    {
+      boardID: 5,
+      content: "오후 회의 장소가 어디였죠????",
+      writer: "김대리",
+      isDeleted: false,
+      isChecked: false,
+      checkedCnt: 4,
+      profileImg: "/img/kim_user.png",
     },
   ],
   nextID: 0,
