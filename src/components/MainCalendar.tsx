@@ -32,44 +32,72 @@ let id = 0;
 
 function MainCalendar() {
   const [view, setView] = useState(false);
+  // 이벤트 저장되는 배열 선언
   const [events, setEvents] = useState<Array<EventApi>>([]);
+  // 초기 이벤트 선언
   const [initialEvents, setInitialEvents] = useState([
     {
       id: String(10001),
-      title: "Merhaba Dunyq",
+      title: "기술 블로그 작성하기",
       start: new Date().toISOString().split("T")[0],
     },
     {
       id: String(20002),
-      title: "Merhaba Dunyq 2",
+      title: "책 읽기",
       start: new Date().toISOString().split("T")[0] + "T14:05:00",
     },
   ]);
 
+  // 선언된 이벤트 배열 알려주는 함수
   useEffect(() => {
     console.log("eventler", events);
   }, [events]);
 
+  // events 변수에 작성한 값을 넣어주는 함수
   const handleEvents = (events: EventApi[]) => {
     setEvents(events);
   };
 
+  // 화면 상으로 배열 내보내주는 함수
   const renderEventContent = (eventInfo: EventContentArg) => {
     return (
       <>
-        <b>{eventInfo.timeText}</b>
-        <b>{eventInfo.event.title}</b>
+        <p>{eventInfo.timeText}</p>
+        <p>{eventInfo.event.title}</p>
       </>
     );
   };
 
+  // 배열 클릭시 삭제해주는 함수
   const handleEventClick = (clickInfo: EventClickArg) => {
     alert(`${clickInfo.event.title}을 취소하시겠습니까?`);
     console.log(clickInfo.event.id);
     clickInfo.event.remove();
   };
+
+  // 날짜 창 클릭 시 추가해주는 함수
   const handleDateSelect = (selectInfo: DateSelectArg) => {
+    //모달창 구현
+    // const ModalComponent = (props) => {
+    //   const { title } = props;
+
+    //   const [modal, setModal] = useState(false);
+
+    //   const toggle = () => setModal(!modal);
+    //   const alertshow = () => {
+    //     alert("button clicked");
+    //   };
+
+    //   const closeBtn = (
+    //     <button className="close" onClick={toggle}>
+    //       &times;
+    //     </button>
+    //   );
+
+    //   return <div></div>;
+    // };
     let title = prompt("일정을 추가해주세요");
+    // {modal? }
     let calenderApi = selectInfo.view.calendar;
     calenderApi.unselect();
     if (title) {
